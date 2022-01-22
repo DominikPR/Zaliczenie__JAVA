@@ -1,9 +1,16 @@
 package com.company;
 
-public class Human {
+public class Human extends Animal{
     String firstname;
     String lastname;
     private Double salary;
+    Animal pet;
+    Human human;
+
+    public Human(String species) {
+        super(species);
+    }
+
 
     public Double getSalary()
     {

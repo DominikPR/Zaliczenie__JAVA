@@ -1,12 +1,13 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Animal {
     public static final double DEFAULT_DOG_WEIGHT = 10.0;
     public static final double DEFAULT_WEIGHT_FELIS = 2.0;
     public static final double DEFAULT_WEIGHT = 1.0;
-    final String species;
-    Double weight;
-    String name;
+    String species;
+    double weight;
     Boolean isAlive;
 
 
@@ -23,21 +24,21 @@ public class Animal {
 
     }
 
-    void feed() {
+    public void feed() {
         if (this.isAlive) {
 
             this.weight += 1;
-            System.out.println("thx for food");
+            System.out.println("thx for food :D");
 
         } else {
-            System.out.println("too late");
+            System.out.println("too late :(");
         }
     }
 
     void takeForWalk() {
         if (this.isAlive) {
             this.weight-=1;
-            System.out.println("nice walk");
+            System.out.println("nice walk :)");
             if (this.weight <= 0 )
             {
                 this.isAlive = false;
@@ -45,13 +46,7 @@ public class Animal {
 
         }
     else {
-
-
-
-            System.out.println("HALO POLICE");
-
-
-
+            System.out.println("HALO POLICJA");
             }
         }
 
