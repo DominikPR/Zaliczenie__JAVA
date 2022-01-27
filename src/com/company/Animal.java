@@ -54,6 +54,9 @@ public class Animal {
             }
         }
 
+    public String toString(){
+        return  "Gatunek: " + species + " Waga: " + weight + " KG";
+    }
 
 }
 

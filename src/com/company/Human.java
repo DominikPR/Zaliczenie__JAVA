@@ -4,15 +4,17 @@ public class Human extends Animal {
     public String lastname;
     private Double salary;
     private Car car;
+    public String age;
     Phone mobile;
     Animal pet;
     Human human;
 
 
-    public Human(String firstname, String lastname) {
+    public Human(String firstname, String lastname,String age) {
         super();
         this.firstname = firstname;
         this.lastname = lastname;
+        this.age = age;
         this.salary = 0.0;
     }
 
@@ -51,5 +53,10 @@ public class Human extends Animal {
         }
 
 
+    }
+
+
+    public String toString(){
+        return "Imie: " + firstname + " Nazwisko: " + lastname + " Wiek: " + age;
     }
 }

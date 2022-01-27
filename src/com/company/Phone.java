@@ -34,15 +34,12 @@ public class Phone {
 
     @Override
     public String toString() {
-        return "Phone{" +
-                "Producer='" + Producer + '\'' +
-                ", model='" + model + '\'' +
-                ", YearOfProduction=" + YearOfProduction +
-                ", os='" + os + '\'' +
-                ", Colour='" + Colour + '\'' +
-                ", SizeScreen=" + SizeScreen +
-                ", ramSize=" + ramSize +
-                '}';
+        return "Phone" +
+                "Producer= '" + Producer + '\'' +
+                ", model= '" + model + '\'' +
+                ", YearOfProduction= " + YearOfProduction +
+                ", SizeScreen= " + SizeScreen +
+                ", ramSize= " + ramSize +"GB";
     }
 }
 
