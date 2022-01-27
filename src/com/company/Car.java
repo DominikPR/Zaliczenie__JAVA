@@ -5,6 +5,7 @@ public class Car {
     final String producer;
     final String model;
     final String YearOfProduction;
+    public Double value;
     String colour;
     String plates;
     String owner;
@@ -16,6 +17,7 @@ public class Car {
         this.colour = colour;
         this.plates = plates;
         this.owner = owner;
+        this.value = 0.0;
     }
     public String toString(){
         return "Producent: " + this.producer+ " model: "+ this.model + " rok produkcji: "+ this.YearOfProduction+ "Kolor: " + this.colour + "Tablice rejestracyjne: "+this.plates;
