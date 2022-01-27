@@ -24,6 +24,10 @@ public class Animal {
 
     }
 
+    public Animal() {
+
+    }
+
     public void feed() {
         if (this.isAlive) {
 

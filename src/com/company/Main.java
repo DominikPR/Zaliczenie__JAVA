@@ -11,29 +11,15 @@ public class Main {
         Phone Iphone = new Phone("Apple","7", 2019,6.7,64);
 
 
-        dog.feed();
-        dog.feed();
-        dog.feed();
-        dog.takeForWalk();
-        System.out.println(dog.species);
-        System.out.println(dog.weight);
+        Human student = new Human("Dominik","Keller");
+        Human teacher = new Human("Marcin", "Keller");
 
-        System.out.println(BMW.model);
-        System.out.println(BMW.producer);
-        System.out.println(BMW.YearOfProduction);
-        System.out.println(BMW.colour);
-        System.out.println(BMW.plates);
-        System.out.println(BMW.owner);
-
-        System.out.println(BMW2.model);
-        System.out.println(BMW2.producer);
-        System.out.println(BMW2.YearOfProduction);
-        System.out.println(BMW2.colour);
-        System.out.println(BMW2.plates);
-        System.out.println(BMW2.owner);
-
-
-        System.out.println(Iphone.getRamSize());
+        student.setSalary(0.0);
+        System.out.println(student.getSalary());
+        student.setSalary(-1.0);
+        System.out.println(student.getSalary());
+        student.setSalary(100.0);
+        System.out.println(student.getSalary());
 
     }
 }
