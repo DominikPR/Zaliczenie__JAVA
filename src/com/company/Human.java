@@ -1,4 +1,8 @@
 package com.company;
+
+import com.company.device.Car;
+import com.company.device.Phone;
+
 public class Human extends Animal {
     public String firstname;
     public String lastname;

@@ -1,5 +1,10 @@
 package com.company;
 
+import com.company.device.Car;
+import com.company.device.Phone;
+
+import java.sql.SQLOutput;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,8 +15,8 @@ public class Main {
         BMW.value = 50.0;
         Car BMW2 = new Car("BMW","Serie 3", "2014", "Black","GLE UA44", "Dominik Keller");
         BMW2.value = 100.0;
-        Phone Iphone = new Phone("Apple","7", 2019,6.7,64);
-        Phone Xiaomi = new Phone("Xiaomi","mi 11", 2021,6.67,64);
+        Phone Iphone = new Phone("Apple","7", "2019","6.7","64","Black");
+        Phone Xiaomi = new Phone("Xiaomi","mi 11", "2021","6.67","64","Black");
 
 
         Human student = new Human("Dominik","Keller","20");
@@ -25,6 +30,16 @@ public class Main {
         System.out.println(Xiaomi);
         System.out.println(felis);
         System.out.println(dog);
+        System.out.println("----------");
+        Iphone.turnOn();
+        System.out.println("----------");
+        Xiaomi.turnOn();
+        System.out.println("----------");
+        BMW.turnOn();
+        System.out.println("----------");
+        BMW2.turnOn();
+        System.out.println("----------");
+
 
 
 
