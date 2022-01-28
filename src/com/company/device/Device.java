@@ -2,7 +2,7 @@ package com.company.device;
 
 
 import com.company.salleable;
-import com.company.Human;
+import com.company.creatures.Human;
 
 public abstract class Device implements salleable {
     public String producer;

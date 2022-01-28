@@ -1,14 +1,15 @@
-package com.company;
+package com.company.creatures;
 
-import java.util.Objects;
+import com.company.salleable;
 
-public class Animal implements salleable {
+public abstract class Animal implements salleable, Feedable {
     public static final double DEFAULT_DOG_WEIGHT = 10.0;
     public static final double DEFAULT_WEIGHT_FELIS = 2.0;
     public static final double DEFAULT_WEIGHT = 1.0;
+    public static final double DEFAULT_FOOD_WEIGHT = 1.0;
+    public Double weight;
     String species;
-    double weight;
-    Boolean isAlive;
+    public Boolean isAlive;
 
 
     public Animal(String species) {
@@ -29,30 +30,34 @@ public class Animal implements salleable {
     }
 
     public void feed() {
+        this.feed(DEFAULT_FOOD_WEIGHT);
+        System.out.println("Zwierze zostalo nakarmione jedną porcją");
+    }
+
+    @Override
+    public void feed(Double foodWeight) {
         if (this.isAlive) {
-
-            this.weight += 1;
-            System.out.println("thx for food :D");
-
+            this.weight += foodWeight;
+            System.out.println("Dzięki za jedzenie :D ");
+            System.out.println("Zwierze zostalo nakarmione, " + foodWeight + "kg");
         } else {
-            System.out.println("too late :(");
+            System.out.println("too late :/");
         }
     }
 
     void takeForWalk() {
         if (this.isAlive) {
-            this.weight-=1;
+            this.weight -= 1;
             System.out.println("nice walk :)");
-            if (this.weight <= 0 )
-            {
+            if (this.weight <= 0) {
                 this.isAlive = false;
             }
 
-        }
-    else {
+        } else {
             System.out.println("HALO POLICJA");
-            }
         }
+    }
+
 
     @Override
     public void Sale(Human seller, Human buyer, Double price) {
@@ -72,11 +77,13 @@ public class Animal implements salleable {
     }
 
 
-    public String toString(){
-        return  "Gatunek: " + species + " Waga: " + weight + " KG";
+    public String toString() {
+        return "Gatunek: " + species + " Waga: " + weight + " KG";
     }
 
 }
+
+
 
 
 

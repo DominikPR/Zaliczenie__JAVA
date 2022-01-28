@@ -1,6 +1,6 @@
 package com.company.device;
 
-import com.company.Human;
+import com.company.creatures.Human;
 
 public class Car extends Device{
 

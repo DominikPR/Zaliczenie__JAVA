@@ -1,14 +1,14 @@
 package com.company;
 
-import com.company.device.Car;
-import com.company.device.Phone;
-
-import java.sql.SQLOutput;
+import com.company.creatures.Human;
+import com.company.creatures.FarmAnimal;
+import com.company.creatures.Pet;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        /*
         Animal dog = new Animal("dog");
         Animal felis = new Animal("felis");
         Car BMW = new Car("BMW","Serie 3", "2008", "Grey","GLE NM44", "Dominik Keller");
@@ -23,37 +23,29 @@ public class Main {
         Human teacher = new Human("Marcin", "Keller","44");
 
         Animal homoSapiens = new Animal("homo sapiens");
+        */
+        Human student = new Human();
+        Human teacher = new Human();
+        Human homoSapiens = new Human();
+        Pet cat = new Pet("Kot");
+        Pet dog = new Pet("Pies");
+        FarmAnimal cow = new FarmAnimal("Krowa");
+        FarmAnimal pig = new FarmAnimal("Świnia");
 
+        System.out.println("Krowa");
+        cow.beEaten();
+        cow.beEaten();
 
+        System.out.println("Kot");
+        cat.feed();
+        cat.feed(15.0);
 
-        dog.Sale(student,teacher, 15.0);
-        student.pet = dog;
-        teacher.cash=500000.0;
-        dog.Sale(student,teacher,50.0);
-        felis.Sale(student,teacher,20.0);
-        student.pet = homoSapiens;
-        System.out.println("----------------------------------------");
-        homoSapiens.Sale(student,teacher,20.0);
-        System.out.println("----------------------------------------");
-        student.mobile=Iphone;
-        Iphone.Sale(student,teacher,10.0);
-        student.car = BMW;
-        System.out.println("----------------------------------------");
-        System.out.println("Student posiada takie auta: "+ student.car );
-        System.out.println("Nauczyciel posiada takie auta: "+ teacher.car );
-        System.out.println("----------------------------------------");
+        System.out.println("Pies" );
+        dog.feed(12.0);
+        System.out.println("Świnia");
+        pig.beEaten();
+        pig.beEaten();
 
-        System.out.println("Studenta pieniądze przed sprzedarzą: "+ student.cash + "zł");
-        System.out.println("----------------------------------------");
-
-        BMW.Sale(student,teacher,100.0);
-        System.out.println("----------------------------------------");
-
-        System.out.println("Studenta pieniądze po sprzedarzy: "+ student.cash + "zł");
-        System.out.println("----------------------------------------");
-        System.out.println("Student posiada takie auta: "+ student.car );
-        System.out.println("Nauczyciel posiada takie auta: "+ teacher.car );
-        System.out.println("----------------------------------------");
 
 
 
