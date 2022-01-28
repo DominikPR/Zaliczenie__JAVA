@@ -1,5 +1,7 @@
 package com.company.device;
 
+import com.company.Human;
+
 public class Car extends Device{
 
     final String producer;
@@ -35,4 +37,18 @@ public class Car extends Device{
         return "Producent: " + this.producer+ " model: "+ this.model + " rok produkcji: "+ this.YearOfProduction+ "Kolor: " + this.colour + "Tablice rejestracyjne: "+this.plates;
     }
 
+    @Override
+    public void Sale(Human seller, Human buyer, Double price) {
+        if (buyer.cash < price){
+            System.out.println("Nie masz wystarczająco pieniędzy");
+        } else if (seller.car != this){
+            System.out.println("Nie pij więcej przecież samochodu nie masz!");
+        } else{
+            seller.cash += price;
+            buyer.cash -= price;
+            seller.car = null;
+            buyer.car = this;
+            System.out.println("Udalo sie sprzedac samochód za " + price + " zł");
+        }
+    }
 }

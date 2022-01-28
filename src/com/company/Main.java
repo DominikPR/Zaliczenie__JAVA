@@ -22,23 +22,38 @@ public class Main {
         Human student = new Human("Dominik","Keller","20");
         Human teacher = new Human("Marcin", "Keller","44");
 
-        System.out.println(BMW);
-        System.out.println(BMW2);
-        System.out.println(student);
-        System.out.println(teacher);
-        System.out.println(Iphone);
-        System.out.println(Xiaomi);
-        System.out.println(felis);
-        System.out.println(dog);
-        System.out.println("----------");
-        Iphone.turnOn();
-        System.out.println("----------");
-        Xiaomi.turnOn();
-        System.out.println("----------");
-        BMW.turnOn();
-        System.out.println("----------");
-        BMW2.turnOn();
-        System.out.println("----------");
+        Animal homoSapiens = new Animal("homo sapiens");
+
+
+
+        dog.Sale(student,teacher, 15.0);
+        student.pet = dog;
+        teacher.cash=500000.0;
+        dog.Sale(student,teacher,50.0);
+        felis.Sale(student,teacher,20.0);
+        student.pet = homoSapiens;
+        System.out.println("----------------------------------------");
+        homoSapiens.Sale(student,teacher,20.0);
+        System.out.println("----------------------------------------");
+        student.mobile=Iphone;
+        Iphone.Sale(student,teacher,10.0);
+        student.car = BMW;
+        System.out.println("----------------------------------------");
+        System.out.println("Student posiada takie auta: "+ student.car );
+        System.out.println("Nauczyciel posiada takie auta: "+ teacher.car );
+        System.out.println("----------------------------------------");
+
+        System.out.println("Studenta pieniądze przed sprzedarzą: "+ student.cash + "zł");
+        System.out.println("----------------------------------------");
+
+        BMW.Sale(student,teacher,100.0);
+        System.out.println("----------------------------------------");
+
+        System.out.println("Studenta pieniądze po sprzedarzy: "+ student.cash + "zł");
+        System.out.println("----------------------------------------");
+        System.out.println("Student posiada takie auta: "+ student.car );
+        System.out.println("Nauczyciel posiada takie auta: "+ teacher.car );
+        System.out.println("----------------------------------------");
 
 
 

@@ -1,6 +1,10 @@
 package com.company.device;
 
-public abstract class Device {
+
+import com.company.salleable;
+import com.company.Human;
+
+public abstract class Device implements salleable {
     public String producer;
     public String model;
     public String yearOfProduction;
@@ -22,6 +26,11 @@ public abstract class Device {
 
     public String toString(){
         return "";
+    }
+
+    @Override
+    public void Sale(Human seller, Human buyer, Double price) {
+
     }
 }
 

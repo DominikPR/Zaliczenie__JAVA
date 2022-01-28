@@ -1,5 +1,7 @@
 package com.company.device;
 
+import com.company.Human;
+
 public class Phone extends Device{
     final String Producer;
     final String model;
@@ -43,6 +45,21 @@ public class Phone extends Device{
                 ", YearOfProduction= " + YearOfProduction +
                 ", SizeScreen= " + SizeScreen +
                 ", ramSize= " + ramSize +"GB";
+    }
+
+    @Override
+    public void Sale(Human seller, Human buyer, Double price) {
+        if (buyer.cash < price){
+            System.out.println("Nie masz wystarczająco pieniędzy");
+        } else if (seller.mobile != this){
+            System.out.println("Nie masz telefonu !");
+        } else{
+            seller.cash += price;
+            buyer.cash -= price;
+            seller.mobile = null;
+            buyer.mobile = this;
+            System.out.println("Udalo sie sprzedac telefon za " + price + " zł");
+        }
     }
 }
 

@@ -7,11 +7,12 @@ public class Human extends Animal {
     public String firstname;
     public String lastname;
     private Double salary;
-    private Car car;
+    public Car car;
     public String age;
-    Phone mobile;
-    Animal pet;
-    Human human;
+    public Phone mobile;
+    public Animal pet;
+    public Human human;
+    public Double cash;
 
 
     public Human(String firstname, String lastname,String age) {
@@ -20,6 +21,7 @@ public class Human extends Animal {
         this.lastname = lastname;
         this.age = age;
         this.salary = 0.0;
+        this.cash = 0.0;
     }
 
 
@@ -57,6 +59,13 @@ public class Human extends Animal {
         }
 
 
+    }
+
+    public void setPet(Animal pet) {
+        this.pet = pet;
+    }
+    public Animal getPet() {
+        return pet;
     }
 
 
