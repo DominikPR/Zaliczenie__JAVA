@@ -18,15 +18,7 @@ public class Phone {
         this.ramSize = ramSize;
     }
 
-    public Phone(String producer, String model, Integer yearOfProduction, String os, String colour, Double size, Double sizeScreen, Integer ramSize) {
-        this.Producer = producer;
-        this.model = model;
-        this.YearOfProduction = yearOfProduction;
-        this.os = os;
-        this.Colour = colour;
-        this.SizeScreen = sizeScreen;
-        this.ramSize = ramSize;
-    }
+
 
         public  String getRamSize(){
         return this.ramSize + "GB" ;
