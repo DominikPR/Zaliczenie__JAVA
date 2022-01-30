@@ -22,6 +22,11 @@ public abstract class Device implements salleable {
         this.owner = owner;
         this.engineVolume = 3.0;
     }
+
+    public Device(String producer, String model, String yearOfProduction, String colour) {
+
+    }
+
     public abstract void turnOn();
 
     public String toString(){

@@ -2,27 +2,30 @@ package com.company.device;
 
 import com.company.creatures.Human;
 
-public class Car extends Device{
+public abstract class Car extends Device{
 
-    final String producer;
-    final String model;
-    final String YearOfProduction;
+    public final String producer;
+    public final String model;
+    public final String YearOfProduction;
     public Double value;
     public Double engineVolume;
-    String colour;
+    public String colour;
     String plates;
-    String owner;
+    public Double oil;
+    public Double capacitance;
+    public Double gas;
 
-    public Car(String producer, String model, String yearOfProduction, String colour, String plates,String owner){
-        super(producer,model,yearOfProduction,colour,plates,owner);
-        this.producer = producer;
+    public Car(String producer, String model, String yearOfProduction, String colour) {
+        super(producer, model, yearOfProduction, colour);
+        this.producer=producer;
         this.model = model;
-        YearOfProduction = yearOfProduction;
-        this.colour = colour;
-        this.plates = plates;
-        this.owner = owner;
+        this.YearOfProduction = yearOfProduction;
+        this.engineVolume = 1.9;
         this.value = 0.0;
-        this.engineVolume = 3.0;
+        this.plates = "GLE NM44";
+        this.oil = 0.0;
+        this.capacitance = 0.0;
+        this.gas = 0.0;
     }
 
     @Override
@@ -51,4 +54,6 @@ public class Car extends Device{
             System.out.println("Udalo sie sprzedac samochód za " + price + " zł");
         }
     }
+
+    public abstract void Refuel();
 }
