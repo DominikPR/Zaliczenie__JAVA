@@ -1,6 +1,7 @@
 package com.company;
 
 
+import com.company.creatures.Human;
 import com.company.device.Diesel;
 import com.company.device.Electric;
 import com.company.device.LPG;
@@ -19,26 +20,45 @@ public class Main {
         Electric tesla = new Electric("Tesla", "v1", "2020", "White");
         LPG VW = new LPG("Volkswagen", "golf 5", "2009", "Black");
         Phone iphone = new Phone("Iphone","11","2021","6.7","64","Black");
-        iphone.installAnApp("Gmail");
-        iphone.installAnApp("Facebook", "v1_01");
-        System.out.println("-----------------------------------------------------------");
-        List<String> apps = new ArrayList<>();
-        apps.add("GolfBattle");
-        apps.add("8Ball");
-        apps.add("HearthStone");
-        iphone.installAnApp(apps);
-        System.out.println("-----------------------------------------------------------");
-        System.out.println(BMW.oil);
-        BMW.Refuel();
-        System.out.println(BMW.oil);
-        System.out.println("--------------------------------");
-        System.out.println(tesla.capacitance);
-        tesla.Refuel();
-        System.out.println(tesla.capacitance);
-        System.out.println("--------------------------------");
-        System.out.println(VW.gas);
-        VW.Refuel();
-        System.out.println(VW.gas);
+
+        BMW.value = 60000.0;
+        tesla.value = 100000.0;
+        VW.value = 100.0;
+
+        Human student = new Human();
+        Human teacher = new Human();
+        Human dziekan = new Human();
+
+        student.addCar(BMW);
+        student.addCar(tesla);
+        student.addCar(VW);
+        student.addCar(BMW);
+        student.addCar(tesla);
+        student.removeCar(BMW);
+        student.addCar(BMW);
+        System.out.println(student.hasCar(BMW));
+        System.out.println(student.getGarageValue());
+        teacher.addCar(BMW);
+        teacher.addCar(tesla);
+        teacher.addCar(VW);
+        student.addCar(BMW);
+        System.out.println("----------------------------------");
+        BMW.Sale(student, teacher, 500.0);
+        System.out.println("----------------------------------");
+        teacher.cash = 10000.0;
+        System.out.println("Ilosc pieniedzy w portfelu przed kupnem nauczyciel " + teacher.cash);
+        System.out.println("Ilosc pieniedzy w portfelu przed kupnem student " + student.cash);
+        tesla.Sale(student,teacher,500.0);
+        System.out.println("Ilosc pieniedzy w portfelu po zakupie nauczyciel " + teacher.cash);
+        System.out.println("Ilosc pieniedzy w portfelu po zakupie student " + student.cash);
+        System.out.println("----------------------------------");
+        BMW.Sale(dziekan, student, 500.0);
+        System.out.println("----------------------------------");
+        student.cash = 1000.0;
+        BMW.Sale(teacher, student, 600.0);
+        System.out.println("----------------------------------");
+        dziekan.cash = 20000.0;
+        BMW.Sale(student, dziekan, 800.0);
 
 
 

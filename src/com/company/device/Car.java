@@ -2,6 +2,8 @@ package com.company.device;
 
 import com.company.creatures.Human;
 
+import java.util.Comparator;
+
 public abstract class Car extends Device{
 
     public final String producer;
@@ -44,13 +46,18 @@ public abstract class Car extends Device{
     public void Sale(Human seller, Human buyer, Double price) {
         if (buyer.cash < price){
             System.out.println("Nie masz wystarczająco pieniędzy");
-        } else if (seller.car != this){
+        } else if (seller.hasCar(this)){
             System.out.println("Nie pij więcej przecież samochodu nie masz!");
-        } else{
+        }
+        else if (buyer.hasFreeSpace())
+        {
+            System.out.println("Nie masz miejsca w garażu");
+        }
+        else{
             seller.cash += price;
             buyer.cash -= price;
-            seller.car = null;
-            buyer.car = this;
+            seller.removeCar(this);
+            buyer.addCar(this);
             System.out.println("Udalo sie sprzedac samochód za " + price + " zł");
         }
     }

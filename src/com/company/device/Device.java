@@ -4,6 +4,8 @@ package com.company.device;
 import com.company.salleable;
 import com.company.creatures.Human;
 
+import java.security.PublicKey;
+
 public abstract class Device implements salleable {
     public String producer;
     public String model;
@@ -12,6 +14,7 @@ public abstract class Device implements salleable {
     public String plates;
     public String owner;
     public Double engineVolume;
+    public Double value;
 
     public Device(String producer, String model, String yearOfProduction, String colour, String plates, String owner) {
         this.producer = producer;
@@ -21,6 +24,7 @@ public abstract class Device implements salleable {
         this.plates = plates;
         this.owner = owner;
         this.engineVolume = 3.0;
+        this.value = 0.0;
     }
 
     public Device(String producer, String model, String yearOfProduction, String colour) {
